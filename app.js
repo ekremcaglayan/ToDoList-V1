@@ -23,7 +23,7 @@ app.get("/", function(req,res){
 
 app.post("/", function(req, res){
     var item = req.body.newItem;
-    console.log(item);
+    res.render("list", {newListItem: item});
 });
 
 app.listen(3000, function(){
