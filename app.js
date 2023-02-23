@@ -24,6 +24,10 @@ app.get("/", function(req,res){
     res.render("list", {listTitle: day, newListItems: items});    
 });
 
+app.get("/work", function(req, res){
+    res.render("list", {listTitle: "Work List", newListItems: workItems});
+});
+
 app.post("/", function(req, res){
     let item = req.body.newItem;
 
@@ -34,10 +38,6 @@ app.post("/", function(req, res){
         items.push(item);
         res.redirect("/");
     }
-});
-
-app.get("/work", function(req, res){
-    res.render("list", {listTitle: "Work List", newListItems: workItems});
 });
 
 app.listen(3000, function(){
